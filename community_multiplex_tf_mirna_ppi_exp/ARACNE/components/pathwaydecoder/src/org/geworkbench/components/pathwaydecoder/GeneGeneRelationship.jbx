@@ -1,0 +1,31 @@
+[PropertyInfo]
+background,double[],false,false, , ,false,<default>
+backgroundType,int,false,false, , ,false,<default>
+copulaTransform,boolean,false,false, , ,true,<default>
+d,double,false,false, , ,false,<default>
+d2,double,false,false, , ,false,<default>
+histogram,double[],false,false, , ,false,<default>
+maPerMIStep,double,false,false, , ,false,<default>
+markerVector,IGenericMarkerList,false,false, , ,false,<default>
+mArraySet,IMicroarraySet,false,false, , ,false,<default>
+mArrayVector,IPropertyTaggedItemList,false,false, , ,false,<default>
+maxD2,double,false,false, , ,false,<default>
+maxFg,double,false,false, , ,true,<default>
+mi3DProb,double[][][],false,false, , ,false,<default>
+mi3DSpace,int[][][],false,false, , ,false,<default>
+microarrayNo,int,false,false, , ,false,<default>
+miProb,double[][],false,false, , ,false,<default>
+miSpace,int[][],false,false, , ,false,<default>
+normal,double[],false,false, , ,false,<default>
+normalBin,int,false,false, , ,false,<default>
+probMatrix,double[][],false,false, , ,false,<default>
+ranks,RankSorter[],false,false, , ,false,<default>
+ratio,double,false,false, , ,false,<default>
+sigma,double,false,false, , ,false,<default>
+step,double,false,false, , ,true,<default>
+type,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

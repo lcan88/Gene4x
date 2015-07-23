@@ -1,0 +1,26 @@
+[PropertyInfo]
+absPath,String,false,false, , ,false,<default>
+active,boolean,false,false, , ,true,<default>
+arraySetId,core.util.DefaultIdentifiable,false,false, , ,false,<default>
+compatibilityLabel,String,false,false, , ,true,<default>
+dataSetName,String,false,false, , ,true,<default>
+dataSetProperties,java.util.HashMap,false,false, , ,false,<default>
+descriptions,String[],false,false, , ,true,<default>
+dirty,boolean,false,false, , ,true,<default>
+experimentInfo,String,false,false, , ,false,<default>
+experimentInformation,String,false,false, , ,true,<default>
+extend,org.bison.datastructure.properties.CSExtendable,false,false, , ,false,<default>
+file,java.io.File,false,false, , ,true,<default>
+icon,javax.swing.ImageIcon,false,false, , ,true,<default>
+ID,String,false,false, , ,true,<default>
+label,String,false,false, , ,true,<default>
+maResource,core.resource.Resource,false,false, , ,false,<default>
+name,String,false,false, , ,true,<default>
+path,String,false,false, , ,true,<default>
+resource,core.resource.Resource,false,false, , ,true,<default>
+selectedProperty,org.bison.util.DSAnnotLabel,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

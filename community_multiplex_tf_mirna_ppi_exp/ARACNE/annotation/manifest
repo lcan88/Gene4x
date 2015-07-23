@@ -1,0 +1,7 @@
+ontology=go.onto
+ontology=kegg.onto
+annotation=bioproc.anno
+annotation=cellcomp.anno
+annotation=molfunc.anno
+annotation=kegg.anno
+synonyms=yeast.syno

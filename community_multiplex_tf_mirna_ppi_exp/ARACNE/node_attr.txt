@@ -1,0 +1,4 @@
+Pathway
+G6 = Erk
+G7 = Erk
+G9 = Erk

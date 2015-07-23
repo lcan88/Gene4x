@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<toc version="1.0">
+
+	<tocitem text="Project Panel">
+
+		 <tocitem target="project.folder.overview" text="Project Folders Overview" />
+
+		<tocitem target="manage.project" text="Manage Projects"/>
+
+		<tocitem target="manage.workspace" text="Manage Workspace"/>
+
+		<tocitem target="open.dataset" text="Open Dataset"/>
+
+		<tocitem target="merge.dataset" text="Merge Dataset"/>
+
+		<tocitem target="rename.dataset" text="Rename Dataset"/>
+
+         <tocitem target="delete.dataset" text="Delete Dataset" />
+
+         <tocitem target="Preference" text="Preferences" />
+
+         <tocitem target="remote.data" text="Remote" />
+
+	</tocitem>
+
+</toc>
+

@@ -1,0 +1,5 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+    <component class="org.geworkbench.builtin.projects.comments.CommentsPanel">
+        <online-help helpSet="org/geworkbench/builtin/projects/comments/help/annotationPanelHelpSet.hs"/>
+    </component>
+</component-descriptor>

@@ -1,0 +1,6 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+    <component class="org.geworkbench.components.colormosaic.ColorMosaicPanel">
+        <menu-item path="File.Image snapshot" mode="onFocus" var="File.Image snapshot"/>
+        <online-help helpSet="geaw/online-help/ColorMosaic/colorMosaicHelpSet.hs"/>
+    </component>
+</component-descriptor>

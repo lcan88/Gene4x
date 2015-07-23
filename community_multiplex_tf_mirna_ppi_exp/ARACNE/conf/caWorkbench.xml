@@ -1,0 +1,173 @@
+<geaw-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ConfigurationFile Schema.xsd">
+    <gui-window name="Main GUI" class="org.geworkbench.engine.skin.Skin"/>
+    <plugin id="expressionFileFilter" name="Exp. Format" class="org.geworkbench.engine.parsers.ExpressionFileFormat">
+        <extension-point name="input-format"/>
+    </plugin>
+    <plugin id="AffyExcelTXTFilter" name="Exp. Format" class="org.geworkbench.engine.parsers.AffyExcelTXTFileFormat">
+        <extension-point name="input-format"/>
+    </plugin>
+    <plugin id="affyFilter" name="Affy File Format" class="org.geworkbench.engine.parsers.AffyFileFormat">
+        <extension-point name="input-format"/>
+    </plugin>
+    <plugin id="genepixFilter" name="Genepix File Format" class="org.geworkbench.engine.parsers.GenePixFileFormat">
+        <extension-point name="input-format"/>
+    </plugin>
+    <plugin id="projectWindow" name="Project Panel" class="org.geworkbench.builtin.projects.ProjectPanel">
+        <gui-area name="ProjectArea"/>
+        <menu-item path="File.Open.File" mode="always" var="File.Open.File"/>
+        <menu-item path="File.Save.Workspace" mode="always" var="File.Save.Workspace"/>
+        <menu-item path="File.Open.Workspace" mode="always" var="File.Open.Workspace"/>
+        <menu-item path="File.New.Workspace" mode="always" var="File.New.Workspace"/>
+        <menu-item path="File.New.Project" mode="always" var="File.New.Project"/>
+        <menu-item path="File.Export" mode="always" var="File.Export"/>
+        <menu-item path="File.Merge Datasets" mode="always" var="File.Merge Datasets"/>
+        <menu-item path="File.Remove.Project" mode="always" var="File.Remove.Project"/>
+        <menu-item path="File.Remove.File" mode="always" var="File.Remove.File"/>
+        <menu-item path="File.Remove.Image" mode="always" var="File.Remove.Image"/>
+        <menu-item path="Edit.Rename.Project" mode="always" var="Edit.Rename.Project"/>
+        <menu-item path="Edit.Rename.File" mode="always" var="Edit.Rename.File"/>
+        <online-help helpSet="geaw/online-help/projectTree/projectTreeHelpSet.hs"/>
+    </plugin>
+    <plugin id="phenotypePanel" name="Phenotype Panel" class="org.geworkbench.components.selectors.PropertyTagSelectorPanel">
+        <gui-area name="SelectionArea"/>
+        <!--<menu-item path="Commands.Panels.New.Phenotype" mode="always" var="Commands.Panels.New.Phenotype"/>-->
+        <menu-item path="Commands.Panels.Delete Panel" mode="onFocus" var="Commands.Panels.Delete"/>
+        <menu-item path="Commands.Panels.Activate Panel" mode="onFocus" var="Commands.Panels.Activate"/>
+        <!--<menu-item path="Commands.Panels.Activate All.Phenotypes" mode="always" var="Commands.Panels.Activate All.Phenotype"/>-->
+        <menu-item path="Commands.Panels.Deactivate Panel" mode="onFocus" var="Commands.Panels.Deactivate"/>
+        <!--<menu-item path="Commands.Panels.Deactivate All.Phenotypes" mode="always" var="Commands.Panels.Deactivate All.Phenotype"/>-->
+        <menu-item path="Commands.Panels.Rename Panel" mode="onFocus" var="Commands.Panels.Rename"/>
+        <menu-item path="Commands.Panels.Add to Panel" mode="onFocus" var="Commands.Panels.Add to Panel"/>
+    </plugin>
+    <plugin id="genePanel" name="Gene Panel" class="org.geworkbench.components.selectors.GenericMarkerSelectorPanel">
+        <gui-area name="SelectionArea"/>
+        <!--<menu-item path="Commands.Panels.New.Marker" mode="always" var="Commands.Panels.New.Marker"/>-->
+        <menu-item path="Commands.Panels.Delete Panel" mode="onFocus" var="Commands.Panels.Delete"/>
+        <menu-item path="Commands.Panels.Activate Panel" mode="onFocus" var="Commands.Panels.Activate"/>
+        <!--<menu-item path="Commands.Panels.Activate All.Marker Panels" mode="always" var="Commands.Panels.Activate All.Marker"/>-->
+        <menu-item path="Commands.Panels.Deactivate Panel" mode="onFocus" var="Commands.Panels.Deactivate"/>
+        <!--<menu-item path="Commands.Panels.Deactivate All.Marker Panels" mode="always" var="Commands.Panels.Deactivate All.Marker"/>-->
+        <menu-item path="Commands.Panels.Rename Panel" mode="onFocus" var="Commands.Panels.Rename"/>
+        <menu-item path="Commands.Panels.Add to Panel" mode="onFocus" var="Commands.Panels.Add to Panel"/>
+        <menu-item path="View.Clear Selection" mode="onFocus" var="View.Clear Selection"/>
+        <online-help helpSet="geaw/online-help/Panels/PanelsHelpSet.hs"/>
+    </plugin>
+    <plugin id="reverseEngineering" name="Reverse Engineering" class="org.geworkbench.components.pathwaydecoder.GeneProfiler">
+        <gui-area name="VisualArea"/>
+        <online-help helpSet="geaw/online-help/PathwayDecoder/regDecoHelpSet.hs"/>
+    </plugin>
+    <plugin id="hierarchicalClusteringPanel" name="Dendrogram" class="org.geworkbench.components.hierarchicalclustering.HierClusterViewAppComponent">
+        <gui-area name="VisualArea"/>
+    </plugin>
+    <plugin id="cytoscapePanel" name="Cytoscape" class="org.geworkbench.components.cytoscape.CytoscapeWidget">
+        <gui-area name="VisualArea"/>
+        <online-help helpSet="geaw/online-help/Cytoscape/CytoscapeHelpSet.hs"/>
+    </plugin>
+    <plugin id="colorMosaicPanel" name="Color Mosaic" class="org.geworkbench.components.colormosaic.ColorMosaicPanel">
+        <gui-area name="VisualArea"/>
+        <menu-item path="File.Image snapshot" mode="onFocus" var="File.Image snapshot"/>
+        <online-help helpSet="geaw/online-help/ColorMosaic/colorMosaicHelpSet.hs"/>
+    </plugin>
+    <!--<plugin id="hierarchicalClusteringPanel" name="Dendrogram" class="org.geworkbench.components.hierarchicalclustering.HierClusterViewAppComponent">
+        <gui-area name="VisualArea"/>
+        <menu-item path="File.Image snapshot" mode="always" var="File.Image snapshot"/>
+    </plugin>-->
+    <plugin id="SOMClusteringPanel" name="SOM Clusters" class="org.geworkbench.components.plots.SOMDisplay">
+        <gui-area name="VisualArea"/>
+        <menu-item path="File.Image snapshot" mode="always" var="File.Image snapshot"/>
+    </plugin>
+    <plugin id="pathwayPanel" name="caBIO Pathways" class="org.geworkbench.components.annotations.PathwayPanel">
+        <gui-area name="VisualArea"/>
+        <online-help helpSet="geaw/online-help/PathwayPanel/pathwayPanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="annotationsPanel" name="Marker Annotations" class="org.geworkbench.components.annotations.AnnotationsPanel">
+        <gui-area name="VisualArea"/>
+        <online-help helpSet="geaw/online-help/MarkerAnnotationPanel/markerAnnotationPanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="expressionProfilePanel" name="Expression Profiles" class="org.geworkbench.components.microarrays.ExpressionProfilePanel">
+        <gui-area name="VisualArea"/>
+        <menu-item path="File.Image snapshot" mode="onFocus" var="File.Image snapshot"/>
+        <online-help helpSet="geaw/online-help/ExpressionProfile/expProfileHelpSet.hs"/>
+    </plugin>
+    <plugin id="tabularMicroarrayPanel" name="Tabular Microarray Panel" class="org.geworkbench.components.microarrays.TabularMicroarrayPanel">
+        <gui-area name="VisualArea"/>
+        <online-help helpSet="geaw/online-help/TablePanel/tablePanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="hierarchicalClusteringAnalysis" name="Hierachical Clustering Analysis" class="org.geworkbench.components.clustering.HierClustAnalysis">
+        <extension-point name="clustering"/>
+    </plugin>
+    <plugin id="jniHierarchicalClusteringAnalysis" name="JNI Hierachical Clustering Analysis" class="org.geworkbench.components.clustering.JniHierClustAnalysis">
+        <extension-point name="clustering"/>
+    </plugin>
+    <plugin id="fastHierarchicalClusteringAnalysis" name="Fast Hierachical Clustering Analysis" class="org.geworkbench.components.clustering.FastHierClustAnalysis">
+        <extension-point name="clustering"/>
+    </plugin>
+    <plugin id="somAnalysis" name="SOM Analysis" class="org.geworkbench.components.clustering.SOMAnalysis">
+        <extension-point name="clustering"/>
+    </plugin>
+    <plugin id="missingValueNorm" name="Missing Values" class="org.geworkbench.components.normalization.MissingValueNormalizer">
+        <extension-point name="normalizers"/>
+    </plugin>
+    <plugin id="log2Normalizer" name="Log2 Tranformation" class="org.geworkbench.components.normalization.LogTransformationNormalizer">
+        <extension-point name="normalizers"/>
+    </plugin>
+    <plugin id="thresholdNormalizer" name="Threshold Normalizer" class="org.geworkbench.components.normalization.ThresholdNormalizer">
+        <extension-point name="normalizers"/>
+    </plugin>
+    <plugin id="MarkerCenteringNormalizer" name="Marker Centering Normalizer" class="org.geworkbench.components.normalization.MarkerCenteringNormalizer">
+        <extension-point name="normalizers"/>
+    </plugin>
+    <plugin id="MicroarrayCenteringNormalizer" name="Microarray Centering Normalizer" class="org.geworkbench.components.normalization.MicroarrayCenteringNormalizer">
+        <extension-point name="normalizers"/>
+    </plugin>
+    <plugin id="MeanVarianceNormalizer" name="Mean Variance Normalizer" class="org.geworkbench.components.normalization.MarkerMeanVarianceNormalizer">
+        <extension-point name="normalizers"/>
+    </plugin>
+    <plugin id="missingValuesFilter" name="Missing Values Filter" class="org.geworkbench.components.filtering.MissingValuesFilter">
+        <extension-point name="filters"/>
+    </plugin>
+    <plugin id="deviationFilter" name="Deviation Filter" class="org.geworkbench.components.filtering.DeviationBasedFilter">
+        <extension-point name="filters"/>
+    </plugin>
+    <plugin id="expressionThreshold" name="Expression Threshold Filter" class="org.geworkbench.components.filtering.ExpressionThresholdFilter">
+        <extension-point name="filters"/>
+    </plugin>
+    <plugin id="detectionCall" name="Affy Detection Call Filter" class="org.geworkbench.components.filtering.AffyDetectionCallFilter">
+        <extension-point name="filters"/>
+    </plugin>
+    <plugin id="TwoChannelFilter" name="Genepix Filter" class="org.geworkbench.components.filtering.GenepixExpressionThresholdFilter">
+        <extension-point name="filters"/>
+    </plugin>
+    <plugin id="imageViewer" name="Image Viewer" class="org.geworkbench.components.viewers.ImageViewer">
+        <gui-area name="VisualArea"/>
+    </plugin>
+    <plugin id="commentsPanel" name="Dataset Annotation" class="org.geworkbench.builtin.projects.comments.CommentsPanel">
+        <gui-area name="CommandArea"/>
+        <online-help helpSet="geaw/online-help/AnnotationPanel/annotationPanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="historyPanel" name="Dataset History" class="org.geworkbench.builtin.projects.history.HistoryPanel">
+        <gui-area name="CommandArea"/>
+        <online-help helpSet="geaw/online-help/History/historyPanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="infoPanel" name="Experiment Info" class="org.geworkbench.builtin.projects.experimentinformation.ExperimentInformationPanel">
+        <gui-area name="CommandArea"/>
+        <online-help helpSet="geaw/online-help/ExperimentInfo/infoPanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="microarrayPanel" name="Microarray Panel" class="org.geworkbench.components.microarrays.MicroarrayPanel">
+        <gui-area name="VisualArea"/>
+        <menu-item path="File.Image snapshot" mode="onFocus" var="File.Image snapshot"/>
+        <online-help helpSet="geaw/online-help/MicroarrayPanel/microarrayPanelHelpSet.hs"/>
+    </plugin>
+    <plugin id="filteringPanel" name="Filtering Panel" class="org.geworkbench.components.analysis.FilteringPanel">
+        <gui-area name="CommandArea"/>
+        <online-help helpSet="geaw/online-help/Filters/filterHelpSet.hs"/>
+    </plugin>
+    <plugin id="normalizationPanel" name="Normalization Panel" class="org.geworkbench.components.analysis.NormalizationPanel">
+        <gui-area name="CommandArea"/>
+        <online-help helpSet="geaw/online-help/Normalizers/normalizerHelpSet.hs"/>
+    </plugin>
+    <plugin id="analysisPanel" name="Analysis" class="org.geworkbench.components.analysis.AnalysisPanel">
+        <gui-area name="CommandArea"/>
+        <online-help helpSet="geaw/online-help/AnalysisPanel/analysisPanelHelpSet.hs"/>
+    </plugin>
+</geaw-config>

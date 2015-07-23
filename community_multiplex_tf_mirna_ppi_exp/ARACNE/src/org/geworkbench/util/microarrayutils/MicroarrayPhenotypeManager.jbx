@@ -1,0 +1,9 @@
+[PropertyInfo]
+caseIndices,int[],false,false, , ,false,<default>
+controlIndices,int[],false,false, , ,false,<default>
+maSet,org.bison.datastructure.biocollections.microarrays.CSMicroarraySet,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

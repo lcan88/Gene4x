@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="geworkbench-IDE">
+    <!-- TODO: edit the following target according to your needs -->
+    <!-- (more info: http://www.netbeans.org/kb/41/freeform-config.html#compilesingle) -->
+    <target name="compile-selected-files-in-src">
+        <fail unless="files">Must set property 'files'</fail>
+        <!-- TODO decide on and define some value for ${build.classes.dir} -->
+        <mkdir dir="components/goterms/classes"/>
+        <javac destdir="components/goterms/classes" includes="${files}" source="1.5" srcdir="components/goterms/src">
+            <classpath path="components/goterms/classes;classes;lib/distributions.jar;lib/jfreechart-1.0.0-rc1.jar"/>
+        </javac>
+    </target>
+</project>

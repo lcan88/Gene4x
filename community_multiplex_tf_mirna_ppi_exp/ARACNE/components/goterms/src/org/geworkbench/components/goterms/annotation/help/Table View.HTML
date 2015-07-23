@@ -1,0 +1,50 @@
+<html>
+
+
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>User Comments</title>
+
+<link rel="stylesheet" type="text/css" href="ncicb.css">
+
+</head>
+
+
+
+<body>
+
+<h3>Table View</h3> 
+    <p>The Table View provides an alternate view of the mappings obtained in the main panel. It also provides some statistical enrichment tests of the mappings. This help section describe the table view <a href="#_Basic_Usage">Basic Usage</a>.</p> 
+    <p><img border="0" width="756" height="434" src="Table%20View_files/image001.jpg"></p> 
+    <h3><a name="_Basic_Usage"></a>Basic Usage</h3> 
+    <p>The following summarizes the table view:</p> 
+    <p>Six columns are displayed (after a tree has been mapped in the Tree View) which correspond to: </p> 
+    <p>1) <b>GO ID</b> for a category in which there is a match from either of the lists</p> 
+    <p>2) <b>Go Term: </b>Name of the GO Category</p> 
+    <p>3) <b>Enriched:</b> Whether there is a statistical enrichment of mappings in the selected list when compared to mappings from the reference list(explained further below) using the default Chi-Squared test.</p> 
+    <p>4) <b>Selected:</b> Number of genes mapped from the selected list (after transforming affy Ids to the corresponding genes)</p> 
+    <p>5) <b>Total Related:</b> Number of genes mapped from the reference list in a category and its children</p> 
+    <p>6) <b>P Value: </b>P Value of the mappings (explained further below)</p> 
+    <p>Any of the rows (or categories) can be deactivated or ignored in further computations of the statistics mentioned above. There is a context menu available which enables user to enable/disable selected categories and/or enable/disable all categories. This selection is reflected in the P-Value trends plots as well.</p> 
+    <p><b>Enrichment: </b>This is defined as the predominance of occurrences of mappings from one list when compared to another. This is quantified either by a Chi-Squared test (http://mathworld.wolfram.com/Chi-SquaredTest.html) or a Fisher&#8217;s exact test (http://mathworld.wolfram.com/FishersExactTest.html) in our application</p> 
+    <p><b>Bonferroni Correction: </b>The P-Values obtained by the Tests describes above can be corrected for multiple tests by a Bonferroni factor (http://mathworld.wolfram.com/BonferroniCorrection.html). This considers only the &#8216;UP&#8217; regulated (enriched) categories and performs a correction based on the number of categories remaining. This also adds on a further column listing the corrected P-Value based on this test.</p> 
+    <p><b>Min # in category: </b>This specifies a minimum number of matches in a category (excluding descendants) from the selected list for a category to be considered for enrichment test. Please note the mappings displayed in the table and trees are cumulative mappings for a category including descendant categories.</p> 
+    <p><b>Recompute: </b>This re-computes the statistics based on the current widget settings.</p> 
+    <p><b>Save: </b>This allows for the currently displayed data in the table to be saved to the file-system as a tab-delimited file.</p>
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<project name="caWorkBench-component" default="compile">
+
+    <!-- ===================================================================== -->
+    <!-- INIT  -->
+    <!-- ===================================================================== -->
+    <target name="init" description="Initializes the build environment.">
+
+        <!-- Project-wide properties -->
+        <!-- Paths -->
+        <property name="classes" value="classes"/>
+        <property name="debug" value="on"/>
+        <!-- Java Source -->
+        <property name="src" value="src"/>
+        <!-- Source directory for resources -->
+        <property name="res" value="res"/>
+        <!-- Directory for Javadoc -->
+        <property name="docs" value="web/api"/>
+        <!-- The executable libs -->
+        <property name="lib" value="lib"/>
+        <!-- The parent project -->
+        <property name="parentClasses" value="../../classes"/>
+        <property name="parentLibs" value="../../lib"/>
+
+    </target>
+
+    <!-- ===================================================================== -->
+    <!-- PREPARE  -->
+    <!-- ===================================================================== -->
+    <target name="prepare" depends="init" description="Prepares for compilation">
+        <mkdir dir="${classes}"/>
+
+        <!-- Classpath for compiling -->
+        <path id="classpath">
+            <fileset dir=".">
+                <include name="lib/**/*.jar"/>
+            </fileset>
+            <pathelement location="${parentClasses}"/>
+            <fileset dir="${parentLibs}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </path>
+
+    </target>
+
+    <target name="compile-check" depends="prepare">
+        <condition property="src-exists">
+            <available file="${src}"/>
+        </condition>
+    </target>
+
+    <!-- ===================================================================== -->
+    <!-- COMPILE  -->
+    <!-- ===================================================================== -->
+
+    <target name="compile" depends="prepare, compile-check" description="Compiles .java source code." if="src-exists">
+        <javac srcdir="${src}" destdir="${classes}" debug="${debug}" source="1.5" target="1.5" memorymaximumsize="256M" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+            </classpath>
+        </javac>
+        <copy todir="${classes}">
+            <fileset dir="${src}">
+                <exclude name="CVS"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- ===================================================================== -->
+    <!-- CLEAN  -->
+    <!-- ===================================================================== -->
+    <target name="clean" description="Clean all build products." depends="init">
+        <delete dir="${classes}"/>
+    </target>
+
+    <!-- ====================================================================== -->
+    <!-- JAVADOC -->
+    <!-- ====================================================================== -->
+    <target name="javadoc" depends="prepare">
+        <javadoc maxmemory="256M" sourcepath="${src}" destdir="${docs}" packagenames="*">
+            <classpath refid="classpath"/>
+        </javadoc>
+    </target>
+
+    <!-- ====================================================================== -->
+    <!-- TEST -->
+    <!-- ====================================================================== -->
+    <target name="test" depends="compile">
+        <mkdir dir="testResults"/>
+        <junit printsummary="yes" haltonfailure="yes">
+            <classpath refid="run.classpath"/>
+
+            <formatter type="plain"/>
+
+            <batchtest fork="yes" todir="testResults">
+                <fileset dir="${src}">
+                    <include name="**/test/Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+</project>

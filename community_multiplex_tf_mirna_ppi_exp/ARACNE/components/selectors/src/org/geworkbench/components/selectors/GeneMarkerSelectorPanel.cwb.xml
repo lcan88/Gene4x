@@ -1,0 +1,14 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+    <component class="org.geworkbench.components.selectors.GenericMarkerSelectorPanel">
+        <!--<menu-item path="Commands.Panels.New.Marker" mode="always" var="Commands.Panels.New.Marker"/>-->
+        <menu-item path="Commands.Panels.Delete Panel" mode="onFocus" var="Commands.Panels.Delete"/>
+        <menu-item path="Commands.Panels.Activate Panel" mode="onFocus" var="Commands.Panels.Activate"/>
+        <!--<menu-item path="Commands.Panels.Activate All.Marker Panels" mode="always" var="Commands.Panels.Activate All.Marker"/>-->
+        <menu-item path="Commands.Panels.Deactivate Panel" mode="onFocus" var="Commands.Panels.Deactivate"/>
+        <!--<menu-item path="Commands.Panels.Deactivate All.Marker Panels" mode="always" var="Commands.Panels.Deactivate All.Marker"/>-->
+        <menu-item path="Commands.Panels.Rename Panel" mode="onFocus" var="Commands.Panels.Rename"/>
+        <menu-item path="Commands.Panels.Add to Panel" mode="onFocus" var="Commands.Panels.Add to Panel"/>
+        <menu-item path="View.Clear Selection" mode="onFocus" var="View.Clear Selection"/>
+        <online-help helpSet="org/geworkbench/components/selectors/help/PanelsHelpSet.hs"/>
+    </component>
+</component-descriptor>

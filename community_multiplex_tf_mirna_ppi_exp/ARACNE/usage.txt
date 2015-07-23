@@ -1,0 +1,68 @@
+Usage: aracne [OPTION] ...
+
+Standard ARACNe arguments:
+
+	-i  <file>		Inpute gene expression profile dataset
+
+	-o  <file>		Output file name (optinal) [*]
+
+	-j  <file>		Existing adjacency matrix (.adj) file
+
+	-a  <accurate|fast> 	Algorithm (accurate | fast), default: accurate
+
+	-k  <kernel width>  	Kernel width (accurate method only), default: determined by program
+
+	-b  <# bins>        	No. of bins (fast method only), default: 6
+
+	-t  <threshold>     	MI threshold, default: 0
+
+	-p  <p-value>       	P-value for MI threshold (e.g. 1e-7), default: 1 [**]	
+
+	-e  <tolerance>     	DPI tolerance, default: 1
+
+	-h  <probeId>       	Hub gene (only MI w/ hub gene will be computed), default: NONE
+
+	-r  <sample number> 	Use resampling arrays
+
+	-s  <file>          	A file containing a list of probes for which a subnetwork will be
+	                    	constructed, default: NONE
+
+	-l  <file>          	A file containing a list of probes annotated as transcription 
+				factors in the input dataset, default: NONE [***]
+
+	-n  <noise>         	Correct for MI under-estimation due to measurement noise
+	                    	<noise> is the variance of the measurement noise, default: 0
+
+	-c  <+/-probeId %>	Conditional network reconstruction, default: NONE [****]
+	                    	[format: "+24 0.35", "-1973_s_at 0.4"]
+	
+	-f  <mean> <cv>     	Gene filter by the mean and coefficient of variance (cv) of the
+	                    	expression values, default: mean=0, cv=0
+	
+	-H  <ARACNE_HOME>	To specify where the ARACNE configuration files locates,
+				default: current working directory   	
+
+	--help              	Display this help and exit
+
+[*]	If no output file is specified by the user, an output will be automatically generated in 
+	the same directory as the input file by appending some of the parameter values, such as
+	kernel width, MI threshold, tolerance and so on, at the end of the input file name, and
+	changing the file extension to ".adj".
+
+[**]	If the "-t" option is supplied, it will enforce the program to use the specified MI 
+	threshold, therefore the "-p" option will be ignored. Otherwise, the program will 
+	automatically determines the MI threshold given the p-value. The default, p-value=1, will
+	preserve all pairwise MI. 
+
+[***]	This option is ideal for transcriptional network reconstruction. If provided, DPI will not
+	remove any connection of a transcription factor (TF) by connections between two probes not
+	annotated as TFs. This option is often used in conjunction with '-s', which specifies a list
+	of probes that are either the same or a subset of the probes specified by '-l'.  	
+
+
+[****]	Conditional network reconstructs the network given a specified probe being most expressed or 
+	least expressed. In the format that follows "-c", "probeId" indicate the probe to be 
+	conditioned on; "+" or "-" specify whether the upper or lower tail of the probe's expression
+	should be used as the condition, and "%" is a percentage between (0, 1) specifying the 
+	proportion of samples used as the conditioning subset. 
+	Example useage:"-c +24 0.35", "-c -1973_s_at 0.4". 	

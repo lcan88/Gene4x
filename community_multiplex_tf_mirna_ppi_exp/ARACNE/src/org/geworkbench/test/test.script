@@ -1,0 +1,69 @@
+public module expressionFileFilter expFileFormat;
+public module projectWindow projectPanel;
+public module genePanel genePanel;
+public int i = 12;
+void main() {
+  int i = 0, j, k;
+  int l[7];
+  j = 30;
+  k = 50;
+  int m[j][k];
+  m[0][0] = 5;
+  print m[0][0];
+  print "over here!";
+  string x = "data/aTestDataSet.exp";
+  module microarrayPanel maPanel;
+  projectPanel.loadDataSet(x, expFileFormat);
+  //genePanel.DataSet = projectPanel.DataSet;
+  datatype DSMicroarraySet dsds; //= projectPanel.DataSet;
+  print "after assignment to dsds";
+  genePanel.DataSet = dsds;
+  // genePanel.createPanel(i++,10,true);
+  j = 5 + 7 + (7 * 9 * 8 - 5);
+  print j;
+  j = 0;
+  while (i < 5) {
+    i++;
+    print i;
+    if (i == 3)
+      break;
+  }
+  print "yo";
+  print i;
+  for (j = 0; j < 7; j++) {
+    print j;
+    if (j == 4) {
+      break;
+    }
+  }
+  print "should be 4";
+  print j;
+  print "test continue";
+  i = 0;
+  while (i < 5) {
+    i++;
+    if (i == 3)
+      continue;
+    print i;
+  }
+  print "yo";
+  print i;
+  //wait (10);
+  for (j = 0; j < 7; j++) {
+    if (j == 4) {
+      continue;
+    }
+    else
+      print j;
+  }
+  i = foo(i, i, expFileFormat);
+  print i;
+  //i = 7.5;
+  print i;
+}
+
+int foo(int i, int b, module expressionFileFilter expFileFormat) {
+  print "in foo";
+  print i;
+  return 1200;
+}

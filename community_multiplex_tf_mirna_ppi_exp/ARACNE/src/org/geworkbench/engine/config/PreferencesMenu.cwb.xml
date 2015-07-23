@@ -1,0 +1,5 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+    <component class="org.geworkbench.engine.config.PreferencesMenu">
+        <menu-item path="Tools.Preferences" mode="always" var="Tools.Preferences"/>
+    </component>
+</component-descriptor>

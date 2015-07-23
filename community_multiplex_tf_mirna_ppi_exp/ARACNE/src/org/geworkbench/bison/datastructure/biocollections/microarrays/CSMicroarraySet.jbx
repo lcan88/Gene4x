@@ -1,0 +1,15 @@
+[PropertyInfo]
+compatibilityLabel,String,false,false, , ,true,<default>
+markerList,org.bison.datastructure.complex.panels.DSItemList,false,false, , ,true,<default>
+markerProperties,java.util.HashMap,false,false, , ,false,<default>
+markerVector,org.bison.datastructure.biocollections.CSMarkerVector,false,false, , ,false,<default>
+MArrayProperties,java.util.HashMap,false,false, , ,false,<default>
+maskedSpots,int,false,false, , ,false,<default>
+SNPMicroarrays,boolean,false,false, , ,true,<default>
+timeStamp,java.util.Date,false,false, , ,false,<default>
+type,int,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

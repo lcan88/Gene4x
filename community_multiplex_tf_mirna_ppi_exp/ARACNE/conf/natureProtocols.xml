@@ -1,0 +1,31 @@
+<geaw-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ConfigurationFile Schema.xsd">
+	<description>
+        Enables all available plug-ins.
+       </description>
+	<gui-window name="Main GUI" class="org.geworkbench.engine.skin.Skin"/>
+	<plugin id="projectWindow" name="Project Panel" class="org.geworkbench.builtin.projects.ProjectPanel">
+		<gui-area name="ProjectArea"/>
+	</plugin>
+	<plugin id="expressionFileFilter" name="Exp. Format" class="org.geworkbench.engine.parsers.ExpressionFileFormat"/>
+	<plugin id="cytoscapePanel" name="Cytoscape" class="org.geworkbench.components.cytoscape.CytoscapeWidget" source="cytoscape">
+		<gui-area name="VisualArea"/>
+	</plugin>
+	<plugin id="goPanel" name="Gene Ontology" class="org.geworkbench.components.goterms.GOPanel" source="goterms">
+		<gui-area name="VisualArea"/>
+	</plugin>
+	<plugin id="phenotypePanel" name="Arrays/Phenotypes" class="org.geworkbench.components.selectors.PhenotypePanel" source="selectors">
+		<gui-area name="SelectionArea"/>
+	</plugin>
+	<plugin id="genePanel" name="Markers" class="org.geworkbench.components.selectors.GenePanel" source="selectors">
+		<gui-area name="SelectionArea"/>
+	</plugin>
+	<plugin id="networkBrowser" name="Network Browser" class="org.geworkbench.components.pathwaydecoder.GeneProfiler" source="pathwaydecoder">
+		<gui-area name="VisualArea"/>
+	</plugin>
+	<plugin id="tabularMicroarrayPanel" name="Microarray Data" class="org.geworkbench.components.microarrays.TabularMicroarrayPanel" source="microarrays">
+		<gui-area name="VisualArea"/>
+	</plugin>
+	<plugin id="aracne" name="ARACNE" class="org.geworkbench.components.pathwaydecoder.ARACNE" source="pathwaydecoder">
+		<gui-area name="VisualArea"/>
+	</plugin>	
+</geaw-config>

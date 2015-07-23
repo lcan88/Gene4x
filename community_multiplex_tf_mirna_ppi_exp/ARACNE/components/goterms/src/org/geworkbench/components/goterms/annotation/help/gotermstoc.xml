@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<toc version="1.0">
+	<tocitem text="Gene Ontology">
+		<tocitem text="Overview" target="overview"/>
+		<tocitem text="Table View" target="Table View"/>
+		<tocitem text="Tree View" target="Tree View"/>
+		<tocitem text="pvalue" target="pvalue"/>
+	</tocitem>
+</toc>

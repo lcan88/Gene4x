@@ -1,0 +1,22 @@
+<component-descriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Descriptor Schema.xsd">
+    <component
+            name="Project Panel"
+            class="org.geworkbench.builtin.projects.ProjectPanel"
+            icon="projectPanelIcon.gif"
+            version="3.1">
+        <online-help helpSet="org/geworkbench/builtin/projects/help/projectPanelHelpSet.hs"/>
+        <menu-item path="File.Open.File" mode="always" var="File.Open.File"/>
+        <menu-item path="File.Save.Workspace" mode="always" var="File.Save.Workspace"/>
+        <menu-item path="File.Open.Workspace" mode="always" var="File.Open.Workspace"/>
+        <menu-item path="File.New.Workspace" mode="always" var="File.New.Workspace"/>
+        <menu-item path="File.New.Project" mode="always" var="File.New.Project"/>
+        <menu-item path="File.Export" mode="always" var="File.Export"/>
+        <menu-item path="File.Merge Datasets" mode="always" var="File.Merge Datasets"/>
+        <menu-item path="File.Remove.Project" mode="always" var="File.Remove.Project"/>
+        <menu-item path="File.Remove.File" mode="always" var="File.Remove.File"/>
+        <menu-item path="File.Remove.Image" mode="always" var="File.Remove.Image"/>
+        <menu-item path="Edit.Rename.Project" mode="always" var="Edit.Rename.Project"/>
+        <menu-item path="Edit.Rename.File" mode="always" var="Edit.Rename.File"/>
+        The Project Panel is responsible for organizing and displaying data sets.
+    </component>
+</component-descriptor>

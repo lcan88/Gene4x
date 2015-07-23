@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+
+	<mapID target="overview" url="overview.htm"/>
+
+	<mapID target="save.workspace" url="save_workspace.htm"/>
+
+	<mapID target="create.project" url="create_project.htm"/>
+
+	<mapID target="rename.project" url="rename_project.htm"/>
+
+	<mapID target="delete.project" url="delete_project.htm"/>
+
+	<mapID target="delete.dataset" url="delete_dataset.htm"/>
+
+	<mapID target="export.dataset" url="export_dataset.htm"/>
+
+	<mapID target="merge.dataset" url="merge_dataset.htm"/>
+
+	<mapID target="open.dataset" url="open_dataset.htm"/>
+
+	<mapID target="open.create.workspace" url="open_create_workspace.htm"/>
+
+	<mapID target="rename.dataset" url="rename_dataset.htm"/>
+
+	<mapID target="projects.overview" url="projects_overview.htm"/>
+
+</map>
+

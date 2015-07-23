@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<toc version="1.0">
+
+	<tocitem text="History Panel">
+
+		<tocitem target="dataset.history" text="Dataset History"/>
+
+	</tocitem>
+
+</toc>
+

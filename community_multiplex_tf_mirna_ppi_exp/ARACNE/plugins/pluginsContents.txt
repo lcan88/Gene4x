@@ -1,0 +1,95 @@
+This directory contains plugins which are loaded when Cytoscape starts
+up. Adding plugin .jar files to this directory will cause them to be
+automatically loaded whenever Cytoscape is run.
+
+The current version of Cytoscape comes preconfigured with the following
+plugin files in this directory:
+
+HierarchicalLayout.jar
+----------------------
+This plugin adds a choice to the Layout menu labelled "Apply Hierarchical
+Layout". Choosing this item causes the graph nodes to be repositioned in
+an approximately optimal configuration for a tree-like directed graph.
+As much as possible, nodes will be positioned in layers so as to minimize
+the number of edges which point upwards. If the graph is acyclic, no edges
+should point upwards. Also, connected components are separated, and some
+effort is made to reduce the number of edge crossings (the method seeks
+to acheive fair quality with minimal runtime complexity). This method
+can also be applied to a selected subset of nodes (>1), which will be
+layed out separately from the rest of the graph.
+
+MCODE.jar
+---------
+This plugin adds a choice to the Plugins menu labelled "MCODE". Through
+this menu you can access the MCODE analysis routines ("Molecular Complex
+Detection"), that detect densely connected regions in large networks.
+Depending on the type of network, clusters may mean different things.
+For instance, clusters in a protein-protein interaction network have
+been shown to be protein complexes and parts of pathways. Clusters
+in a protein similarity network represent protein families. The
+method is based on vertex weighting by local neighborhood
+density and outward traversal from a locally dense seed protein to isolate
+the dense regions according to given parameters. The algorithm has the
+advantage over other graph clustering methods of having a directed mode
+that allows fine-tuning of clusters of interest without considering the
+rest of the network and allows examination of cluster interconnectivity,
+which is relevant for protein networks.
+
+SigAttributes.jar
+-----------------
+This plugin add a choice to the Plugins menu labelled "Find Enriched
+Attributes". This item allows you to scan for significant attributes
+loaded onto the network. The scan can be performed by Attribute
+or by Annotation, and is based on a group of selected nodes.
+
+control.jar
+-----------
+This plugin add a choice to the Layout menu labelled "Align". This item
+will display a toolbar which allow you to align and distribute selected
+nodes relative to each other (Align/Distribute horizontal
+left/center/right, Align/Distribute vertical top/center/bottom)
+
+diff.jar
+--------
+This plugin add a choice to the Data menu labelled "Diff". In order for
+this plugin to function properly, the plugin in "filter.jar" must also
+be loaded. The "Diff" menu item allows the user to compare two networks,
+and will display differences found. Filters that have been created can
+also be applied during the comparison.
+
+filter.jar
+----------
+This plugin adds a new menu named "Filters", a toolbar button to
+access the "Use Filters" function, and a menu item labelled "Attribute
+Browser if passed Filter" to the Data menu. Through these controls, the
+user can define a set of conditions which define a subset of the graph.
+These sets of conditions can be used to select, browse, or compare
+subsets of the currently viewed network.
+
+jgraphLayout.jar
+----------------
+This plugin adds a new choice to the Layout menu labelled "JGraph".
+Through this submenu, the user can apply several layout algorithms
+to the currently viewed network. Circle (all nodes in a single circle),
+Radial (nodes in concentric circles), Spring (embedded spring energy
+minimization), and Sugiyama (layered hierarchical) are possible
+choices.
+
+layout.jar
+----------
+This plugin adds several new layout choices to the Layout menu: 
+ISOM (spring embedded), Radial (polar coordinates), Circle (all nodes
+in a single circle), Spring (local spring embedded optimization)
+
+yLayouts.jar
+------------
+This plugin add a new choice to the Layout menu labelled "yFiles".
+Through this submenu, the user can apply several layout algorithms
+and view transforms including Circular, Organic, Scale, Hierarchic,
+Random, Tree, MirrorX, MirrorY, Rotate, and Orthogonal.
+
+yeast-context.jar
+-----------------
+This plugin adds a context sensitive menu to Cytoscape that enables
+links to Saccharomyces cerevisiae web resources. It can be accessed by
+right-clicking on any node, but is only relevant for budding yeast networks.

@@ -1,0 +1,44 @@
+<html>
+
+
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>User Comments</title>
+
+<link rel="stylesheet" type="text/css" href="ncicb.css">
+
+</head>
+
+
+
+<body>
+<h3><a name="_Navigating_the_GoTerm_TreeView"></a>Tree View </h3> 
+    <p>The Tree View uses a <b>Reference List </b>and <b>Selected List </b>of genes (Affymetrix probe identifiers). This help section describes the tree view <a href="#_Basic_Usage">Basic Usage. </a></p> 
+      <p><img border="0" width="529" height="456" src="Tree%20View_files/image001.gif"></p> 
+          <h3><a name="_Basic_Usage"></a>Basic Usage </h3> 
+    <p>The following summarizes the tree view: </p> 
+    <p>&#12290; A<b> Reference List </b>can be loaded using the <b>Reference List </b>button on the top toolbar. This brings up a file navigation box to specify the reference list file. This file should contain a one Affymetrix identifier per line only. There is no restriction on the file extension used for the file. The checkbox next to the &#8216;Reference List&#8217; button allows for using the entire probe list from the selected chip type instead of the reference list loaded from the file-system. The selected chip type is specified in the drop down box just before the checkbox. Having the checkbox selected without having a reference list file loaded will use all the probes from the selected chip type.</p> 
+    <p>&#12290; The <b>Selected List </b>is created as a part of the Gene Panel. Right-clicking on the root node of the Gene Panel tree will allow for loading a second list of genes (in the same format as the reference list). The file extension here needs to be &#8216;.mps&#8217; though. Once a node is created in the Gene Panel, activate it (either by invoking a context menu or selecting the checkbox next to the name). The entries in the Selected list which are not contained in the Reference List or the chip type (depending on which is used) list are ignored during the mapping on the tree(s). 
+    <p>&#12290; Map List(s) button is used to perform the following multiple steps: </p> 
+    <p>- It creates a tree for the selected ontology if one is not displayed (the creation uses the internet when first invoked and then caches the tree on the file-system for later use).</p> 
+    <p>- Then performs a tree traversal while mapping gene names of Affymetrix probes to the Gene Ontology categories from both the active list defined above. This mapping is based on GO mapping Annotation provided by Affymetrix in their annotation files (the OBO file format is not yet used for obtaining the annotation).</p> 
+    <p>- The resulting nodes in the mapped tree will display two numbers separated by a forward slash such as <i> cell(0/6058)</i>. The first number is the number of Genes mapped to a specific category and all its child nodes from the &#8216;selected list&#8217;. Affymetrix probes are translated to their corresponding genes and the resulting transform is used for the mapping. So as a many-to-one correspondence between the affy probes and genes exists, the cumulative number would be a bit smaller than the number of affy probes in either the reference list or the selected list. The second numbers after the slash are the mappings as above for the reference list (or the entire chip based on the reference list check-box selection and if a reference list is loaded from the file system).</p> 
+    <p>The nodes provide functionality through a context menu for the following: <b>Show Mappings </b>and <b>Add to Panel</b>. Each of these menus has the following further submenus: &#8216;Reference List&#8217;, &#8216;Reference List (including descendants)&#8217;, &#8216;Selected List&#8217;, &#8216;Selected List (including descendants)&#8217;.</p> 
+    <p>&#12290;<b>Right-click &gt; Show Mapping</b> displays (in the region below the tree) a list of Gene Names (or Affy Ids if no dataset is currently loaded) which correspond to the Genes mapped to the node on which the context menu was invoked as follows: Selecting &#8216;Reference List&#8217; from the submenu will display the affy Ids in the reference list which have a mapping to the node in question alone. Selecting &#8216;Reference List (including descendants)&#8217; will display all the affy Ids in the reference list which map to genes in the selected node and all its children. Similarly lists are displayed from the Selected List when using the two other submenu items.</p> 
+    <p>&#12290; <b>Right-click &gt;Add to Panel </b>submenus function similarly to above but the only difference being that the list are not displayed on the region below the tree, rather a panel is created in the &#8220;Gene Panel&#8221; with the list of affy ids (and not Gene Names) obtained using the above process.</p>
+
+
+</body>
+
+
+
+</html>

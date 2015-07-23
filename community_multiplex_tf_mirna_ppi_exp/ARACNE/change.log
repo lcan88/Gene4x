@@ -1,0 +1,71 @@
+03/18/05 - the new ARACNE group was created, which can be compiled under both windows and unix. Results have been confirmed with the MUTUALINFO program on arraydata10x336.exp and arraydata100x336.exp.
+
+03/21/05 - the code has been further cleaned up and documented. Results have been confirmed with the MUTUALINFO program on arraydata10x336.exp and arraydata100x336.exp.
+
+03/22/05 - MatrixOp class was modified to combine the edge matrix creation and constrained edge matrix creation into one function. This is to facilitate the MPI program. Results have been confirmed for all operations to be identical to that before change.
+
+03/23/05 - the leakless guanssian kernel estimator was implemented. the major files modified are "MutualInfo.cpp" and "MutualInfo.h". Since before we are systematrically under-estimate MI, the results from this new version is no longer comparable to the old version (the leaky version), and the new MI estimates should be in general larger than the previous version.
+
+Another thing need to be noted is that in the previous version, copula transform was done by rescaling the rank by dividing by M (i.e. the number of microarrays); in this new version, the ranks are divided by M-1 instead of M to make the transformed ranks starting from 0 and ending at 1.
+
+09/29/05 - the kernel was changed from a truncated gaussian kernel to a non-truncated one. The reason for this is that in the program for determining the optimal kernel width, the truncated gaussian kernel will cause a non-continuous log-likelihood function. Furthermore, after the LOOKUP table was implemented, the computation time saved by using a truncated gaussian kernel becomes really marginal. So using a non-truncated gaussian kernel becomes ideal.
+The change was first made in the MATLAB code then in C++, two implementation produce exactly the same results on the testing dataset.
+
+10/04/2005 - The algorithm is not changed in this revision. Major changes are 1) combine functions in the Matrix_Op class for reconstructing the whole network and reconstructing only a subnetwork. 2) add a function 'shuffleGene' in the Micorarray_Set class that shuffles the expression values of a gene. 3) Change the 'getProbeId' function in the Microarray_Set class so that it matches a gene name in full, not by substring matching. 4) rewrite the dirver function to change the way input arguments are handled, which results in a much cleaner driver function; as a result the 'param.cpp' and 'param.h' are also changed dramatically. 5) change the 'write' function in the Matrix class so that it can write only the adjacency matrix of a subnetwork. 6) new functionalities, '-null' which computes the MI under the null hypothesis, and '-l' which can read a list of nodes to be computed for the subnetwork reconstruction, are added.
+
+All operations have been compared with those of version 09/29/2005 to make sure the results on the test data remain exactly the same.
+   
+10/06/2005 - the '-cal' peration is modified so that it can perform bootstrapping in order to assess the error in MI estimate. The usage message is changed dramatically. 
+
+Results have been confirmed with the 09/29 version.
+
+12/05/2005 - the mutualinfo.cpp is modified. Copula transformation is changed to do the following: it transform the ranks between [0, 1], but leaving 1/(2M) at both sides. This accomodate the possibilities that we might get data smaller/larger than the smallest/largest value in our current dataset.
+
+Modification in matlab was first carried out, then C++ program is changed and results has been confirmed with that from the Matlab codes.
+ 
+12/09/2005 - the option (-r) to use resampling data is added.
+
+12/13/2005 - the "duplicated probe", i.e. probes that map to the same gene, problem is solved. If the second column of the input data file contains gene symbols, then during MI computation, if two probes both have a gene symbol and they are the same, MI will not be computed between them, thus will not affect the following DPI procedures.
+
+Results have been confirmed with previous compliation.
+
+12/19/2005 - The "MutualInfo" class has been re-organized, but the core-algorithm has not been changed. The "-l" option of ARACNE has been modified so that DPI is only performed among nodes involved in the subnetwork.
+
+Results have been confirmed with previous version.
+
+03/22/2006 - The '-n' option was implemented which correct for MI under-estimation due to measurement noise. The '-n' need to be followed by a real positive number specifying the variance of the noise on the microarray. If '-n' is not specified, all computation remain the same as before, which has been confirmed. The corrected MI estimations have been confirmed to be the same as those produced in the Matlab implementation. 
+
+Note that correcting for MI estimation will not affect thresholding, since thresholding is applied before the corrections are made. But it will certainly affect the DPI.
+
+04/12/2006 - The direcctory structure was cleaned up. Everything was put under the same directory. The algorithm was un-touched, so the results were confirmed to be exactly the same as previous version.
+
+04/13/2006 - TF annotation is now formally represented in the program, separated from the subnetwork reconstruction. The major advantage of this is that we can now reconstruct only one probe or a subset of probe, while still being able to use the TF annotation during DPI. (In the last version, if TF annotation was to be used, all TF probes in the dataset must be reconstructed altogether).
+
+Results have been checked against the previous version.
+
+04/14/2006 - changes include:
+
+1) Kernel width and MI threshold auto-determination is implemented, which reads two configuration files under the program directory. As a result, some options to the program has been changed, e.g. '-p' is now used to specify p-value, not percent any more, etc.
+
+2) Help display is now read from the file "usage.txt", in stead of being hard coded in the codes.
+
+3) TF-logic is re-implemented (in Matrix_Op.cpp). The advantage of this new version is that it is self-consistent even for those non-TF hubs; the disadvantage is that it is significantly slower. But reconstructing only one hub should be fine.
+
+All results have been confirmed to behave as expected.
+
+
+04/18/2006 - the adjacency matrix output format has been changed dramatically. All gene iodices were taken out, replaced by affymetrix IDs. The new write() and read() function has been implemented for the MATRIX class. Since the output format is different, the results can no longer be comparable to previous versions. But I did perform step-wise reconstruction: 1) compute all pair-wise MIs 2) read the ADJ file and perform thresholding and DPI, and the result turned out to be the same as that reconstructed by one step.
+
+04/20/2006 - the adjacency matrix format has been further modified, which will print all the parameters used to generate a ADJ file at the beginning of the file - these lines start with ">" so that will be ignored by the ADJ parser when read back into the program.
+
+Also, the Matrix_Op class has been re-organized a bit, so that every part of computation becomes more consistent. The main.cpp is changed so that kernel width and MI threshold will be automatically computed only after the program decides whether any conditional subsets of samples should be taken.
+
+Results remain identical to those from the previous version.
+
+04/20/2006 - '-H' option added.
+
+04/27/2006 - the kernel width extrapolation method has changed, including both the extrapolation function and its parameters. So modifications have been made to the main.cpp and the config_kernel.txt
+
+09/15/2006 - A uniform noise (<1E-7) is added after bootstrapping samples to randomize order of the repeated/tied samples. Repeating ARACNE twice on the sample won't produce exactly the same results now.
+
+03/14/2007 - Modification has been made to main.cpp to ignore lines starting with ">" in config_kernel.txt and config_threshold.txt.

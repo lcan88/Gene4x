@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+
+         "http://java.sun.com/products/javahelp/map_1_0.dtd">
+
+<map version="1.0">
+
+	<mapID target="panels.overview" url="overview.htm"/>
+
+	<mapID target="create.set" url="create_marker_panel_set.htm"/>
+
+	<mapID target="deact" url="create_marker_panel.htm"/>
+
+	<mapID target="save.load.set" url="save_load_panel_set.htm"/>
+
+	<mapID target="rename.set" url="rename_panel_set.htm"/>
+
+	<mapID target="delete.set" url="delete_marker_panel_set.htm"/>
+
+	<mapID target="delete.panel" url="delete_marker_panel.htm"/>
+
+	<mapID target="acdeac.panel" url="ac_deac_panel.htm"/>
+
+	<mapID target="clas.panel" url="classify.htm"/>
+
+</map>
+

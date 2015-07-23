@@ -1,0 +1,16 @@
+COREManager			cabio21-server.nci.nih.gov:8080
+CADSRManager		cabio21-server.nci.nih.gov:8080
+TraceManager			cabio21-server.nci.nih.gov:8080
+LibraryManager			cabio21-server.nci.nih.gov:8080
+GeneManager			cabio21-server.nci.nih.gov:8080
+SequenceManager			cabio21-server.nci.nih.gov:8080
+ProteinManager			cabio21-server.nci.nih.gov:8080
+CMAPOntologyManager		cabio21-server.nci.nih.gov:8080
+PathwayManager			cabio21-server.nci.nih.gov:8080
+OntologyManager		        cabio21-server.nci.nih.gov:8080
+RelationshipManager		cabio21-server.nci.nih.gov:8080
+SessionManager			cabio21-server.nci.nih.gov:8080
+ModelManager			cabio21-server.nci.nih.gov:8080
+UserManager			cabio21-server.nci.nih.gov:8080
+EVSManager			cabio21-server.nci.nih.gov:8080
+ConceptSearchManager 	cabio21-server.nci.nih.gov:8080

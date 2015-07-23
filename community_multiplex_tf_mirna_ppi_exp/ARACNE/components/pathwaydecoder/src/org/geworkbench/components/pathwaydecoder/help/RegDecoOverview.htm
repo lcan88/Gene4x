@@ -1,0 +1,68 @@
+<html>
+
+
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>Network Deconvolution: User Guide</title>
+
+<link rel="stylesheet" type="text/css" href="ncicb.css">
+
+</head>
+
+
+
+<body>
+      <h3>Reverse Engineering</h3> 
+    <p>This component is used to analyze a large amount of microarray data (typically 100-500 microarrays) to reverse engineer the underlying gene regulatory network. This is accomplished by computing pair-wise mutual information between all possible gene-pairs and then by applying the mutual information inequality to recover the network topology. The details of the algorithm are described in &quot;<strong><i>ARACNE</i></strong><em>: An algorithm for the reconstruction of gene regulatory networks in a mammalian cellular context</em>&quot;, Califano et. al. (<a href="http://arxiv.org/abs/q-bio.MN/0410037">http://arxiv.org/abs/q-bio.MN/0410037</a>),</p> 
+    <h3>Profiler</h3> 
+    <p>The Profiler is the first sub-panel of the Reverse Engineering component. This allows the analysis of a network in a gene-centric fashion. In other words, one can select a specific gene of interest and construct the network of interactions with that gene. The Profiler panel further comprises of two sub-panels with titles - <a href="#_Basic_panel">Basic</a> and <a href="#_Conditional_Panel">Conditional.</a></p> 
+    <h3><a name="_Basic_panel"></a><i>Basic</i></h3> 
+    <p>This sub-panel allows one to select a specific gene of interest (the &quot;hub&quot; gene) and calculate the mutual information between this gene and all the other genes on the microarray set. A typical scenario for using the Basic panel is as follows:</p> 
+    <p>1) Select a gene by either typing the name of the gene or its Affymetrix Id in the &#8220;Hub Gene&#8221; box. For example, Affymetrix Id &#8220;AFFX-BioB-M_at&#8221; has been used in the screen-shot below. Note that a gene of interest can also be selected by simply selecting the gene name within the Gene Panel.</p> 
+    <p><img border="0" width="662" height="379" src="Overview_files/image001.gif"></p> 
+    <p> 2) Keep the default value of 0.2 for the &#8220;Mutual Info Thresh.&#8221;, and the pre-selected status of radio button for the &#8220;Mutual Information (Fast)&#8221;. The threshold will filter what results get reported. <strong><i>Note</i></strong>: The threshold, as well as all other MI values shown in this component are displayed at x100 of their actual value.</p> 
+    <p>3) Click on the <b>Analyze (2D)</b>. This will compute the Mutual Information (MI) between the hub gene and all the other genes in the microarray set. A list of genes (see image below) will be populated with gene names ordered in decreasing order of MI value (the corresponding MI values are shown within brackets, at the front of each marker id). The list excludes all genes whose MI score against the hub gene is less than the threshold value designated in step 2 above.</p> 
+    <p><img border="0" width="666" height="348" src="Overview_files/image002.gif"></p> 
+    <h3><i> Scatter Plot</i></h3> 
+    <p>Clicking on any of the genes in the output list activates this graph which displays the scatter-plot for expression values for the hub gene and the gene selected from the output list. Each point on the scatter plot corresponds to a single microarray.</p> 
+    <p>The expression values for the hub gene are plotted along the X-axis and the values for the gene in the output list are plotted on the Y-axis. </p> 
+    <p>Moving the mouse pointer over any point on the scatter plot displays the name of the microarray corresponding to that point as well as the corresponding expression value pair for the hub and output genes. </p> 
+    <p>If phenotypic panels are activated, the scatter plot will display the various points color coded, based on what panel each point/array belongs to.</p> 
+    <p><b>Print Genes</b> will print the list of output gene list. </p> 
+    <p>The scatter plot graphs can be printed (<b>Print Graph</b>) and exported (<b>Export Graph</b>) as JPEG file(s) for storage on local computers.</p> 
+    <h3><a name="_Conditional_Panel"></a> <i>Conditional</i></h3> 
+    <p>This sub-panel allows for limiting the number of microarrays that are used in the computation of the pair wise mutual information scores. Microarray data can be included or excluded by setting up a range for the expression values for a Condition Gene. A typical scenario for using the Conditional panel is as follows:</p> 
+   <p>1) Enter the marker Id for the condition gene in the Condition Gene text box and click <b>Filter</b>. The &quot;Exp. Range From&quot; and &quot;Exp. Range To&quot; text boxes will indicate the minimum and maximum expression values for the condition gene across all microarrays in the selected data set. </p> 
+    <p>2) Edit the &quot;Exp. Range From&quot; and &quot;Exp. Range To&#8221; text boxes with  minimum and maximum desired ranges for the condition gene. This step results in excluding from subsequent computations all microarrays where the value of the condition gene is outside the designated range. </p> 
+    <p>3) Finally, click <b>Analyze (2D)</b> to generate the output list. In this computation, the mutual information is computed using only microarrays that meet the range condition specified above.</p> 
+    <p>Note that Scatter plot diagram now displays data points corresponding to microarrays used in the computation (filtered in) as blue circles while all excluded microarrays (filtered out) are shown as red squares (picture below). </p> 
+    <p>If the &quot;2nd Mrk&quot; box is checked, then clicking on<b> Analyze (2D) </b>results in computing (and displaying) only the MI score between the hub and the condition gene.</p> 
+    <p><img border="0" width="658" height="346" src="Overview_files/image003.gif"></p> 
+    <h3><i>Network Generation</i></h3> 
+    <p>To construct the gene interaction network for a group of genes, use the following steps:</p> 
+    <p>1) Select the genes of interest from the output gene list. Multiple genes are selected by holding down the Control key (or the equivalent key in your system) and clicking on the corresponding marker names in the output list.</p> 
+    <p>2) Click on the <b>Create Network</b>. ARACNE will take over and analyze the selected genes, giving rise to gene network. </p>
+    <p>3) Go to the  Cytoscape panel. This will now display the network generated by ARACNE. </p> 
+    <h3><a name="_Conditional_Analysis"></a>Conditional Analysis</h3> 
+    <p>This is the second sub-panel within the Reverse Engineering panel located next to Profiler. This provides an alternate approach for differential network analysis. In this approach the experiment microarrays can be distinctly sub-grouped based on the expression levels of a condition gene. This approach allows exploration of the joint influence of a chosen condition gene and the hub-gene (gene of interest) over all other genes.</p> 
+    <p>The marker id of the hub gene and that of a condition gene can be entered into the &#8220;Hub&#8221; and &#8220;Condition&#8221; boxes respectively. The contents of the &#8220;Low %&#8221; and the &#8220;High %&#8221; boxes (default values of 0.333) provide ratios that are used in order to divide the experiment microarrays into 3 groups, based on the expression level of the condition gene: </p> 
+    <p>&#12290; The first group (called the &quot;Low&quot; group) is obtained by ordering all microarrays in decreasing order on the expression level of the condition gene and selecting the &quot;Low %&quot; portion of that list (if keeping the default value, the 33.3% low percentile).</p> 
+    <p>&#12290; The second group (called the &quot;High&quot; group) contains the top portion of the list, comprising a number of arrays equal to &quot;High %&quot; times the total number of arrays (if keeping the default value, the 33.3% top percentile).</p> 
+    <p>&#12290; The third group (called the &quot;All&quot; group) contains microarrays that are neither in the &quot;Low&quot; nor in the &quot;High&quot; group.</p> 
+    <p><b>Compute</b> initiates 3 rounds of computation. Each round calculates mutual information scores between the hub gene and all other genes. Each round uses only microarrays in one of the 3 groups described above. The results of this computation (in the form of output gene lists with associated MI scores) are displayed on the text areas occupying the right side of the pane (see figure below). Only genes scoring a MI score above the cut-off value entered in the text boxed labeled &quot;Thr 1:&quot; are reported.</p> 
+    <p><b>Save</b> stores all gene lists (and he associated MI scores) into a text file on the local computer. </p> 
+    <p><img border="0" width="484" height="487" src="Overview_files/image004.gif"></p></body>
+
+
+
+</html>
+

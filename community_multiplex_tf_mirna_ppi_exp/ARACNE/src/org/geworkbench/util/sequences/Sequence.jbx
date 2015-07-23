@@ -1,0 +1,11 @@
+[PropertyInfo]
+DNA,boolean,false,false, , ,true,<default>
+dnaPattern,java.util.regex.Pattern,false,false, , ,false,<default>
+isDNA,boolean,false,false, , ,false,<default>
+label,String,false,false, , ,true,<default>
+sequence,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

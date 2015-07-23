@@ -1,0 +1,48 @@
+<<html>
+
+
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>User Comments</title>
+
+<link rel="stylesheet" type="text/css" href="ncicb.css">
+
+</head>
+
+<body>
+
+<h3> Expression Value Distribution </h3> 
+    <p>The Expression Value Distribution (EVD) is located in the View Area in the top-right of the application. This component uses a line plot to graphically summarize the distribution of expression values within a microarray. The x axis represents the value of the range and the y axis the occurrence of markers with expression value in that range. For each array, the marker value frequencies are plotted over the range [m, M], where m, M are respectively the smallest and highest expression values observed across all arrays of a microarray set. For example, the figure below illustrates a base microarray of CB26-2 where there are two markers with expression value between [0.000, 297.959) which is displayed as x= [0.000, 297.959), y= 9721 and the bin size is 297.959.</p> 
+    <p><img width="847" height="514" src="EVD_help_files/image001.jpg"></p> 
+    <p><b> Basic Usage</b></p> 
+    <p>&#12290; <b>Bin size and Total Bins</b>: Each expression range on the EVD corresponds to a &#8220;bin&#8221;. The size of each bin and total bans are displayed at the upper left corner of the component. The number of total bins equals (m &#8211; M)/ number of bin size.</p> 
+    <p>&#12290; <b>Tooltip: </b>When a user scrolls over a plot, the enabled tool tip displays the name of the array. The tooltip display can be disabled by selecting the tooltip icon. The disabled tooltip icon appears grayed out.</p> 
+    <p>&#12290; <b>Change the base array:</b> The slider can be used to navigate through the microarrays in the selected dataset. As the user moves the slider to the next tick which represents a microarray, the grid is updated with positions representing the marker values in the Microarray being displayed. The base array always labels with the red color.</p> 
+    <p>&#12290; <b>Activated Marker and Array Checkbox:</b> If a microarray or gene panel is created and activated, the EVD reflect plots for each array in the panels when the checkbox is selected (default). Each array in the activated panel is displayed on the graph and its corresponding plot points are linked with lines, while the points corresponding to the base array are unconnected. Unselecting the checkbox results in data from all microarrays/marker in the selected set are shown.</p> 
+    <p>&#12290; <b>One Color per Array:</b> The EVD lines and plots appear color-coded, based on the color preferences of the arrays panel. All the arrays in a panel are shown with the same color. The user can modify the color display to reflect a unique color per array by selected the checkbox <b>One Color per Array</b>.</p> 
+    <p>&#12290; <b>Legend: </b>A legend appears at the bottom of the plot indicating which color and shape corresponds to which panel. Modification of image display preferences are described in details in Preferences. The base array always list as the first one.</p> 
+    <p>&#12290; <b>Image Snapshot: </b> Clicking on this button creates image snapshots that are saved in the project.</p> 
+    <p>&#12290; <b>Zoom: </b>Zooming in can be down by left clicking and drag down over a region of the image or selecting right clicks Zoom In option. Zooming out, left clicks and drag upward or right click and select Zoom Out option.</p> 
+    <p>&#12290; <b>T-Test: </b> This button computes a t-test statistic for each marker and updates the graph title from EVD to T-Test and disabled the base array slider. Case and control panels must be created and classified (Marker Panel Help section for additional information).</p> 
+    <p>&#12290; <b> Print: </b>Prints the displayed EVD. The print dialog pop up is displayed to support printer selection.</p> 
+    <p>&#12290; <b> Selected Values from/to: </b>The starting/ending X axis location that allow markers to be selected graphically and filtered. The number of current selected genes is displayed next to the Total bins. &#8220;Add to Panel&#8221; button adds the selected genes to the Gene Panel.</p>
+
+</ul>
+
+
+
+</body>
+
+
+
+</html>
+

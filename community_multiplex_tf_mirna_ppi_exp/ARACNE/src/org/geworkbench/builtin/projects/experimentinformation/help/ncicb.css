@@ -1,0 +1,127 @@
+BODY, TD {
+
+	font-family : Verdana, Arial, sans-serif ;
+
+	font-size : 11px; 
+
+	color: #312C2C;	
+
+	line-height: 14px; 
+
+}
+
+
+
+
+
+h3 {
+
+	font-family : Verdana, Arial, sans-serif ;
+
+	font-size : 13px; 
+
+	color: #312C2C;	
+
+	line-height: 14px; 
+
+	font-weight: bold;
+
+}
+
+
+
+
+
+A {
+
+	text-decoration: underline;
+
+	color: #7373A5;
+
+}
+
+
+
+
+
+
+
+A:Hover {
+
+	text-decoration: underline;
+
+	color: #F26422;
+
+}
+
+.content_sides {
+
+	font-family : Verdana, Arial, sans-serif ;
+
+	font-size : 13px; 
+
+	color: #312C2C;	
+
+	line-height: 13px; 
+
+}
+
+
+
+.blue_announce {
+
+	font-family : Verdana, Arial, sans-serif ;
+
+	font-size : 13px; 
+
+	color: #5A6B9F;	
+
+	line-height: 16px; 
+
+}
+
+
+
+.content {
+
+	font-family : Verdana, Arial, sans-serif ;
+
+	font-size : 13px; 
+
+	color: #312C2C;	
+
+	line-height: 14px; 
+
+}
+
+
+
+LI {
+
+	margin-left : -5px;
+
+	margin-bottom : 3px;
+
+}
+
+
+
+OL {
+
+	margin-bottom : -5px;
+
+}
+
+
+
+.side_nav_header {
+
+	font-weight: bold;
+
+	font-size: 13px;
+
+	font-family: Verdana, Arial, sans-serif;
+
+	color: #76769A;
+
+}

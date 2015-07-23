@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<toc version="1.0">
+
+	<tocitem text="Marker and Phenotypes">
+
+		<tocitem target="panels.overview" text="Overview"/>
+
+		<tocitem target="create.set" text="Create"/>
+
+		<tocitem target="deact" text="Deactivate"/>
+
+		<tocitem target="save.load.set" text="Load"/>
+
+		<tocitem target="rename.set" text="Rename"/>
+
+		<tocitem target="delete.set" text="Save"/>
+
+		<tocitem target="delete.panel" text="Delete"/>
+
+		<tocitem target="acdeac.panel" text="Activate"/>
+
+		<tocitem target="clas.panel" text="Classify"/>
+
+	</tocitem>
+
+</toc>
+

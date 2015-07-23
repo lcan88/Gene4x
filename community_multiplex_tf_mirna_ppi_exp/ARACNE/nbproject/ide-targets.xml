@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="geworkbench-IDE">
+	<import file="../build.xml"/>
+	<!-- TODO: edit the following target according to your needs -->
+	<!-- (more info: http://www.netbeans.org/kb/41/freeform-config.html#debugj2se) -->
+	<target depends="compile" description="Runs geWorkbench." name="debug-nb">
+		<nbjpdastart addressproperty="jpda.address" name="geworkbench" transport="dt_socket">
+			<classpath refid="run.classpath"/>
+		</nbjpdastart>
+		<java classname="org.geworkbench.engine.config.UILauncher" fork="true">
+			<jvmarg value="-Xmx512M"/>
+			<jvmarg value="-Djava.library.path=lib"/>
+			<classpath refid="run.classpath"/>
+			<!-- This an ANT bug currently awaiting fix. To add append, prepend options to bootclasspath element-->
+			<!--<bootclasspath refid="run.classpath"/>-->
+			<jvmarg value="-Xdebug"/>
+			<jvmarg value="-Xnoagent"/>
+			<jvmarg value="-Djava.compiler=none"/>
+			<jvmarg value="-Xrunjdwp:transport=dt_socket,address=${jpda.address}"/>
+		</java>
+	</target>
+</project>

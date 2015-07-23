@@ -1,0 +1,58 @@
+<html>
+
+
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>User Comments</title>
+
+<link rel="stylesheet" type="text/css" href="ncicb.css">
+
+</head>
+
+
+
+<body>
+
+
+
+<h3>Regulatory Networks Deconvolution</h3>
+
+<p>This component is useful to analyze a large amount of microarray data (typically 100-500 microarrays) to reverse engineer the underlying gene regulatory network<span style="mso-spacerun:yes">. This is accomplished by computing pairwise mutual information between pairs of genes and then by applying the mutual information inequality to recover the network topology. </span></p>
+		<p><span style="mso-spacerun:yes"><b>Profiler</b></span></p>
+		<p>The profiler is the first subpanel of this component. This allows the analsis of a network in a gene-centric fashion. In other words, one can select a specfic gene of interest and construct the network of interactions with that gene. </p>
+		<p>Typical analysis scenario:</p>
+		<p>1) Select a gene by either writing the gene name or Affy Id in the Gene Label box. Note that this is best done by selecting the gene of interest in the Gene Panel. </p>
+		<p>2) Make sure that MI is selected</p>
+		<p>3) Click on 2D Regression. This will compute the Mutual Information between the gene of interest and any other gene in the microarray set. Note that the MI x 100 is displayed. The list will then be populated with gene names ordered in decreasing order of MI strength.</p>
+		<p>4) Select the top genes (E.g., top 100 or up to statistically significant threshold) by using the shift key and the mouse in the list box.</p>
+		<p>5) Click on Generage Graph. After a few seconds, the Network will be generated and displayed in the Genetic Network sub-pane.</p>
+		<p><img src="component.gif" alt="" width="842" height="655" usemap="#component" border="0"><map name="component"><area shape="rect" coords="167,158,534,417" alt=""><area shape="rect" coords="167,134,534,152" alt=""><area shape="rect" coords="420,104,534,126" alt=""><area shape="rect" coords="420,80,534,98" alt=""><area shape="rect" coords="351,104,414,126" alt=""><area shape="rect" coords="351,80,414,97" alt=""><area shape="rect" coords="351,56,534,73" alt=""><area shape="rect" coords="167,104,341,126" alt=""><area shape="rect" coords="167,80,341,98" alt=""><area shape="rect" coords="167,56,341,73" alt=""></map></p>
+		<p><b><font size="2">Advanced Options:</font></b></p>
+		<p><i><b>First Gene/Block Size</b></i>: Unused</p>
+		<p><i><b>Mutual Info Threshold</b></i><b>:</b> If set, it is used to show only genes that have mutual information with the gene of interest above or equal to the input value.</p>
+		<p><i><b>Gene Label</b></i>: The label of the gene of interest.</p>
+		<p><b><i>Results</i></b>: This box allows the user to locate any gene of interest in the list. It works by simply typing the name of the gene of interest (Affy Id or any other information that appears in the list) and then using the keys Ctrl-N and Ctrl-B to go to next or previous matches.</p>
+		<p><b><i>Filter Button</i></b>: This button works with the three boxes surrounding it. It is used to subselect, among the mucroarrays, those that match a predefined criteria. The criteria is set as follows: The box directly above the Filter Button can contain the code (Affy Id or other mnemonic reference to the gene). The two boxes stacked vertically to the left of the button are used to define an expression range. The upper box defines the minimum expression range and the lower box defines the maximum expression range. Microarrays are selected such that the value of the expression for the selected gene (box above the button) is contained in the given range. This allows the analysis of conditional mutual information.</p>
+		<p><b><i>2D Regression Button</i></b>: It is used to compute a form of correlation. Which type of correlation is determined by the choice in the radio boxes: MI = Mutual Information, Chi2 = Mutual Information with expensive but accurate analysis, Linear = performs liner regression, Pearson = Pearson Correlation</p>
+		<p><b><i>Myc Checkbox</i></b>: Should not be used</p>
+		<p><b><i>2nd Marker</i></b>: If selected, the only correlation that is computed is that between the gene identified in the Gene Label box and that identified in the box right above the Filter button.</p>
+		<p><b>p-value</b>: If checked, the bottom left graph shows the p-value associated with the specific Mutual Information value. Otherwise, the probability density of getting that value is shown. Note that the y-axis in the probability/p-value graph is in a scale of e^y where y is the integer exponent on the y-axis. in other words, a value of -5.0 indicates a p-value of e^-5.</p>
+		<p><b><i>Thr: MI</i></b>: If checked the Mutual Information is displayed. Otherwise the p-value is displayed.</p>
+		<p><i><b>Probability Graph</b></i>: The bottom left graph shows an estimate of the pvalue of a specific gene-gene relationship based on an approximation of the Monte Carlo analysis, which uses a beta function. The Blue curve corresponds to the background density (i.e. null hypothesis), showing the probability of optaining a particular value of mutual information by chance, when scoring a pair of genes.</p>
+		<p><b><i>Gene-Gene plot</i></b>: The right plot shows a gene-gene plot across all the microarrays where the x-axis gene is the one of interest (in the Gene Label Box) and the second gene is the one selected in the list. Each microarray is shown as a specific shape and color, according to the selection chosen in the phenotypic panel. The graph is mouse sensitive allowing mouse-over the shapes that define each datapoint. Additionally, the graph can be redrawn either in normal expression coordinates or in rank-transformed space (by checking the &quot;Rank Statistics Plot&quot; checkbox).</p>
+		<p></p>
+	</body>
+
+
+
+</html>
+

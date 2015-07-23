@@ -1,0 +1,12 @@
+[PropertyInfo]
+genericMarker,IGenericMarker,false,false, , ,true,<default>
+jMenuItem1,JMenuItem,false,false, , ,false,<default>
+jMenuItem2,JMenuItem,false,false, , ,false,<default>
+jPopupMenu1,JPopupMenu,false,false, , ,false,<default>
+profiler,GeneProfiler,false,false, , ,false,<default>
+selectedCell,DefaultGraphCell,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

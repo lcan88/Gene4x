@@ -1,0 +1,17 @@
+[PropertyInfo]
+abrev,String,false,false, , ,false,<default>
+canonicalLabel,String,false,false, , ,true,<default>
+description,String,false,false, , ,true,<default>
+disPlayType,int,false,false, , ,true,<default>
+geneName,String,false,false, , ,false,<default>
+label,String,false,false, , ,true,<default>
+locusLink,int,false,false, , ,true,<default>
+markerId,int,false,false, , ,false,<default>
+serial,int,false,false, , ,true,<default>
+shortName,String,false,false, , ,true,<default>
+unigene,org.bison.datastructure.properties.DSUnigene,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

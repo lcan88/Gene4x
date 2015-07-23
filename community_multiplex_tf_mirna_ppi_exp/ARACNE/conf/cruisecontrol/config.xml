@@ -1,0 +1,55 @@
+<cruisecontrol>
+  <project name="geworkbench" buildafterfailed="true">
+    <listeners>
+      <currentbuildstatuslistener
+          file="logs/geworkbench/buildstatus.txt"/>
+    </listeners>
+
+    <!-- Bootstrappers are run every time the build runs, 
+        *before* the modification checks -->
+    <bootstrappers>
+    </bootstrappers>
+
+    <!-- Defines where cruise looks for changes, to decide
+         whether to run the build --> 
+    <modificationset quietperiod="300">
+      <cvs localworkingcopy="checkout/geworkbench"/> 
+    </modificationset>
+
+    <!-- Configures the actual build loop, how often and which
+         build file/target --> 
+    <schedule interval="3600">
+      <ant antscript="c:\pkgs\apache-ant-1.6.3\bin\ant.bat"
+           buildfile="build-geworkbench.xml"
+           target="build"
+           uselogger="true"
+           usedebug="false"/> 
+      <ant antscript="c:\pkgs\apache-ant-1.6.3\bin\ant.bat"
+           buildfile="build-geworkbench.xml"
+           target="test"
+           uselogger="true"
+           usedebug="false"/> 
+    </schedule>
+
+    <!-- directory to write build logs to --> 
+    <log dir="logs/geworkbench">
+	<merge dir="checkout/geworkbench/testResults"/>
+    </log>
+
+    <!-- Publishers are run *after* a build completes -->
+      <publishers>
+          <currentbuildstatuspublisher file="logs/geworkbench/buildstatus.txt"/>
+          <htmlemail mailhost="localhost"
+                     returnaddress="build@geworkbench.org"
+                     defaultsuffix="@genomecenter.columbia.edu"
+                     css="c:\pkgs\cruisecontrol-2.2.1\reporting\jsp\webcontent\css\cruisecontrol.css"
+                     xsldir="c:\pkgs\cruisecontrol-2.2.1\reporting\jsp\webcontent\xsl"
+                     buildresultsurl="http://caldev:8080/cruisecontrol"
+                     spamwhilebroken="false"
+                     reportsuccess="fixes">
+              <failure address="caworkbench-dev" reportWhenFixed="true"/>
+          </htmlemail>
+      </publishers>
+
+  </project>
+</cruisecontrol>
