@@ -1,2 +1,0 @@
-"1"	"A2ML1"	"A2BP1"	"A1CF"	"A1BG"
-"2"	"A1BG"	"A2LD1"	"A2BP1"	"A1CF"
