@@ -29,7 +29,8 @@ In principle, **Gene4x** should run  under Linux and Mac.
 ###**Usage**
 
 To run Gene4x:
-
+* download the net_mirna_and_tf.zip file at the link http://personalpages.to.infn.it/~caselle/BioPhys/Gene4x/
+* unzip net_mirna_and_tf.zip -d /path_to_Gene4x/data/
 *	Set the working directory in Gene4x
 *	./ Gene4x_run.sh
 
