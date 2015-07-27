@@ -1,5 +1,6 @@
 #!/bin/bash
 #networks reconstruction
+echo -n "You are running Gene4x"
 echo -n "Multiplex reconstruction... "
 mkdir temp
 echo -n "Enter the path to the mRNA dataset file > "
