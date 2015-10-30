@@ -45,7 +45,7 @@ sed  "s/}//g" "./temp/test.edgelist_exp"$alpha_exp".txt" > "./temp/net_exp_final
 sed  "s/}//g" "./temp/test.edgelist_tf"$alpha_tf".txt" > "./temp/net_tf_final.txt"
 sed  "s/}//g" "./temp/test.edgelist_mirna"$alpha_mirna".txt"  > "./temp/net_mirna_final.txt"
 rm ./temp/test.edgelist*.txt
-printf '%s\n' "../temp/net_exp_final.txt" "../temp/net_tf_final.txt" "../temp/net_mirna_final.txt" "../temp/net_ppi_unique_nodes_int.txt" >> ./temp/slice.txt
+printf '%s\n' "../temp/net_exp_final.txt" "../temp/net_tf_final.txt" "../temp/net_mirna_final.txt" "../temp/net_ppi_unique_nodes.txt" >> ./temp/slice.txt
 #consensus clustering
 echo -n "Community detection... "
 echo -n "Enter the enter the algorithm you want to use for network clustering (0: oslom undirected, 2: infomap undirected, 4: louvain, 5: label propagation method, 8: modularity optimization)> "

@@ -30,6 +30,7 @@ for(i in 0:9){
     fe4 <- nUniverse - nPredicted - nFocusedSet + nOverlap 
     FisherData <- matrix(c(fe1, fe2, fe3, fe4), ncol=2, byrow=T)
     p2 <- rbind(p2,fisher.test(FisherData)$p.value)
+    complete<-dim(nodi)[1]*(dim(nodi)[1]-1)/2
     density<-rbind(density,(as.numeric(link[i+1,1])/complete))
 }
 alpha<-as.matrix(c(0.005,0.01,0.02,0.03,0.05,0.1,0.2,0.3,0.4,0.5))
