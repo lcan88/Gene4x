@@ -15,7 +15,11 @@ cp exp_net.txt ./temp/
 cat  $text1 | awk '{ print $1 }' > ./temp/exp1.txt
 awk 'NR>=2' ./temp/exp1.txt > ./temp/exp.txt
 rm ./temp/exp1.txt
+split -l $(( $( wc -l < ./temp/exp_net.txt ) / 2 + 1 )) ./temp/exp_net.txt ./temp/exp_net.txt
+mv ./temp/exp_net.txtaa ./temp/exp_net_primaparte.txt
+mv ./temp/exp_net.txtab ./temp/exp_net_secondaparte.txt
 Rscript ./code/unique_nodes.R
+cat ./temp/net_exp_unique_nodes_primaparte.txt ./temp/net_exp_unique_nodes_secondaparte.txt > ./temp/net_exp_unique_nodes.txt
 #integer conversion
 Rscript ./code/conversion_integer_exp.R
 Rscript ./code/conversion_integer_ppi.R
